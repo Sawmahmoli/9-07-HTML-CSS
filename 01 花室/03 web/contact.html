@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花室</title>
+    <!-- test -->
+    <!-- 網頁標題 -->
+     <link rel="stylesheet" href="./css/style.css">
+      <!-- rel屬性定義連結資源與目前文件之間的關係 -->
+      <!-- href=超連結指向的URL 上傳雲端伺服器需加「./」(一般伺服器也可以辨識) -->
+</head>
+<!-- head區屬於網站設定，只跟瀏覽器溝通 -->
+<body>
+    <!-- 頁首區 -->
+      <!-- id & class 名稱自訂 -->
+      <!-- id="#" ; class="." -->
+    <header id="topbar">
+        <div class="logo">
+            <!-- figure將多個影像封裝成一個群組 -->
+            <!-- alt屬性用來說明圖片檔案內容(影響seo，可以留空值但不能刪除) -->
+            <img src="./images/logo_b.svg" alt="logo">
+        </div>
+        <!-- 導覽列 -->
+        <nav class="navigation">
+            <!-- ul=無序清單 ol=有序清單 兩者元素皆為li-->
+            <!-- icon選單 --> 
+            <ul class="icon"><!-- 快速鍵 ul>li*6>a -->
+                <li><a class="icon-fb" href="#"></a></li>
+                <li><a class="icon-ig" href="#"></a></li>
+                <li><a class="icon-line" href="#"></a></li>
+            </ul>
+            
+            <!-- 主選單 -->
+             <ul class="menu"><!-- 快速鍵<ul>li*6>a -->
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">CONTACT</a></li>
+             </ul>
+
+
+        </nav>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main>
+        <section id="contact">
+            <!-- 區塊標題 -->
+            <header class="title"></header>
+                <h2>CONTACT US!</h2>
+                <h3>聯絡我們</h3>
+        </section>
+    </main>
+
+    <!-- 頁尾區 -->
+    <footer>
+        <h2>花室 <span>Flower Shop</span></h2>
+        <nav>
+            <!-- 快捷鍵-- ul>li>*6>a -->
+            <ul class="sitemap">
+                <li><a href=".index.html">HOME</a></li>
+                <li>
+                    <a href="#">NEWS</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">優惠活動</a></li>
+                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="#">商店公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">SERVICE</a>
+                    <!-- 子選單 -->                 
+                    <ul>
+                        <li><a href="#">服務項目1</a></li>
+                        <li><a href="#">服務項目2</a></li>
+                        <li><a href="#">服務項目3</a></li>
+                        <li><a href="#">服務項目4</a></li>
+
+                    </ul></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <small>Copyright &copy; 花市 Flower Shop</small>
+    </footer>
+</body>
+</html>
