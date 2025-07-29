@@ -1,5 +1,10 @@
-@charset "UTF-8";
-/* 編碼要在第一行 */
+@charset "UTF-8";  /* 編碼要在第一行 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* google font import要在第二行 */
+@font-face {
+    font-family: "Morgan";
+    src: url(../webfonts/Morgan.ttf);
+}
 
 /* CSS變數 */
 /* 顏色樣式 */
@@ -83,9 +88,28 @@ a {
     transition: 0.4s;
 }
 
-/* 共用區 */ /* 區塊標題 */
+/* 共用區 */
+/* 區塊標題 */
+
 .title{
-    display: block;
+    margin-bottom: 30px;
+}
+
+.title *{  /* 「*」取.title裡所有子元素 */
+    text-align: center;
+}
+
+.title h2{
+    font-family: "Raleway", sans-serif ;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: solid 2px var(--deep);
+}
+
+.title h3{
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
 }
 
 /* 頁首區 */ 
@@ -156,6 +180,7 @@ div.logo{
 }
 
 #topbar .menu a{
+    font-family: "Chapaza", sans-serif;
     margin: 10px;
     border-bottom: 2px solid transparent;
     /* 保留hover空間*/
@@ -169,10 +194,35 @@ div.logo{
 
 /* 聯絡我們 */
 #contact{
+    display: flex;
+    flex-direction: column;  /*主軸垂直*/
+    justify-content: center;  /*主軸對齊：置中*/
+    align-items: center;  /*副軸對齊：置中*/
+
     height: 100vh;
     /* 背景影像預設排序高於背景顏色 */
     /* background-image: image(../images/pt); */
     background-color: var(--bg-1);
+}
+
+#contact.content{
+    display: flex;
+    width: 80%;
+}
+
+#contact.content>*{
+    flex:1;  /*父元素必須設定flex*/
+    margin: 0 15px;
+}
+
+#contact.content h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#contact.address{
+    font-size: .8rem;
+    font-style: normal;
 }
 
 /* 頁尾區 */
