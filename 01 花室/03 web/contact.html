@@ -50,6 +50,7 @@
     <!-- 主要內容區 -->
     <main>
         <section id="contact">
+
             <!-- 區塊標題 -->
             <header class="title">
                 <h2>Contact us!</h2>
@@ -72,15 +73,14 @@
                     <!-- google map -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d451.76778350298935!2d121.57376320519943!3d25.063166725218494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab86f81e0271%3A0x18e783d262e684f6!2z5Y-w5YyX6Iqx5biC77yI6Ie65YyX6Iqx5Y2J5om555m85biC5aC077yJ!5e0!3m2!1szh-TW!2stw!4v1753778120790!5m2!1szh-TW!2stw"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-
                 </div>
 
                 <!-- 表單 -->
                 <form name="contactform" id="contactform" method="post" charset="UTF-8">
-                    <label for="username">*姓名：</label>
+                    <label for="username">*姓名</label>
                     <!-- autofocus欄位必須在firstview時設定 -->
                     <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名"
                         required="required" autofocus>
@@ -88,13 +88,23 @@
                     <label for="tel">*聯絡電話</label>
                     <input type="tel" name="tel" id="tel" maxlength="10" title="聯絡電話欄位" placeholder="例如：0123456789">
 
-                    <label for="email">*E-mail：</label>
+                    <label for="email">*E-mail</label>
                     <input type="email" name="email" id="email" title="E-mail欄位" required multiple
                         placeholder="請輸入E-mail">
 
                     <!-- 多行文字欄位 -->
-                    <label for="">留言：</label>
-                    <textarea name="message" id="message" rows="3" style="width: 300px;" placeholder="請留下您的意見"></textarea>
+                    <label for="">留言</label>
+                    <textarea name="message" id="message" rows="3" placeholder="請留下您的意見"></textarea>
+
+                    <button class="btn-animation" type="submit">  <!-- 按鈕預設為送出 -->
+                    <span>送出</span>
+                    </button>                
+                </form>
+            </div>
+
+            <!-- 裝飾花朵 -->
+             <figure class="flower1"><img src="./images/flower_r.png" alt="裝飾花朵"></figure> <!-- alt僅能為空值！刪除會影響seo -->
+             <figure class="flower2"><img src="./images/flower_w.png" alt="裝飾花朵"></figure>
 
         </section>
     </main>
