@@ -1,0 +1,119 @@
+// 灰階
+$deep: #444 !default; // !default 賦予預設值
+$dark: #777;
+$grey: #999;
+$light: #f1f1f1;
+// 背景
+$bg-1: #f2edf0;
+$bg-2: #e6ece5;
+$bg-3: #ecf0f4;
+// 輔助
+$lesser-1: #f3e4e4;
+$lesser-2: #efdbdb;
+$lesser-3: #cdaaab;
+$lesser-4: #8f6b6d;
+// 透明
+$alpha-w-20: rgba(255, 255, 255, 0.2);
+$alpha-w-40: rgba(255, 255, 255, 0.4);
+
+$alpha-b-20: rgba(0, 0, 0, 0.2);
+
+// 間距
+$p-x-10: 0 10px;
+$p-x-15: 0 15px;
+
+// 字級
+$f-s-sm: .8rem;
+$f-s-md: 1rem;
+$f-s-lg: 1.2rem;
+
+// RWD
+$mediaSm: "max-width:640px";
+$mediaMd: "max-width:820px";
+
+#contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    @media($mediaMd) {
+        height: auto;
+    }
+
+    .content {
+        display: flex;
+        width: 60%;
+
+        @media($mediaSm) {
+            flex-direction: column;
+
+        }
+    }
+}
+
+#topbar {
+
+    .menu {
+        padding: $p-x-10;
+        border-radius: 999px;
+
+        a {
+            font: {
+                family: "Chapaza", sans-serif;
+                weight: 700;
+                size:$f-s-sm;
+            }
+            line-height: $f-s-sm*1.5;
+            margin: 10px;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                color: $deep;
+                border-bottom: 2px solid $dark;
+                // 下邊框
+            }
+        }
+    }
+
+}
+
+.icon {
+    &-fb {
+        background-image: url(../images/icon-fb.svg);
+
+        &:hover {
+            background-image: url(../images/icon-fb-hover.svg);
+        }
+    }
+
+    &-ig {
+        background-image: url(../images/icon-ig.svg);
+
+        &:hover {
+            background-image: url(../images/icon-ig-hover.svg);
+        }
+    }
+
+    &-line {
+        background-image: url(../images/icon-line.svg);
+
+        &:hover {
+            background-image: url(../images/icon-line-hover.svg);
+        }
+    }
+}
+
+.title {
+    h2 {
+        color: $deep #444;
+
+        font: {
+            family: "Raleway", sans-serif;
+            weight: 700;
+            size: 1.2rem;
+        }
+    }
+}
