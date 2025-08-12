@@ -1,0 +1,9 @@
+@use "reset";
+@use "variables" as *;  // 「*」可以直接調用所有資料(_index)
+
+.title{
+    text-align:center;
+    h3{
+        font-family: v.$family-tc;
+    }
+}

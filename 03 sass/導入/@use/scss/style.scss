@@ -1,0 +1,9 @@
+@use "reset";
+@use "variables" as v;  // 匯入變數 _variables.scss => 不加「_」&「副檔名」
+
+.title{
+    text-align:center;
+    h3{
+        font-family: v.$family-tc;
+    }
+}
