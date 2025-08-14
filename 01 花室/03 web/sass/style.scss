@@ -1,0 +1,103 @@
+@use 'reset'; // @use須在任何其他規則之前寫入
+@use 'variables' as *;
+@use 'function' as *;
+@use 'keyframe';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: "Morgan";
+    src: url(../webfonts/Morgan.ttf);
+}
+
+/* 共用區 ---------------------------------------------*/
+
+// 區塊標題
+.title {
+    margin: $spacing-ex 0 $spacing-xl;
+
+    * {
+        text-align: center;
+        font-weight: $f-w-m;
+    }
+
+    h2 {
+        font-family: $family-display;
+        font-weight: $f-w-b;
+        font-size: $f-s-lg;
+        @include border-bottom;
+    }
+
+    h3 {
+        font-family: $family-tc;
+        font-weight: $f-w-m;
+        font-size: $f-s-lg;
+        margin-top: 10px;
+    }
+}
+
+.logo {
+    width: $w-50;
+}
+
+.icon {
+    a {
+        width: 35px;
+        height: 35px;
+        margin: $spacing-xxs;
+    }
+}
+
+// 迴圈
+// 不調用，直接編譯語法（不寫入function
+@each $social in fb, ig, line {
+    .icon-#{$social} {
+        background-image: url(../images/icon-#{$social}.svg);
+
+        &:hover {
+            background-image: url(../images/icon-#{$social}-hover.svg);
+        }
+    }
+}
+
+/* 頁首區 ---------------------------------------------*/
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $w-80;
+    z-index: $z-ex;
+    @extend %flex-between;
+    padding: $spacing-xs $spacing-xl;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu {
+        padding: $spacing-x-xs;
+        border-radius: $radius-ex;
+        @include glassmorphism;
+
+        a {
+            font-family: $family-en;
+            font-weight: $f-w-b;
+            margin: $spacing-xs;
+            @include border-bottom($width:2px, $color:transparent);
+
+            &:hover{
+                color:$black;
+                @include border-bottom($width:2px, $color:$black);
+            }
+
+        }
+
+    }
+
+}
+
+#contactform {
+    .btn-animation {
+        @extend %btn-animation;
+    }
+}

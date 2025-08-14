@@ -1,0 +1,35 @@
+@use '../variables/' as *;
+@use './mixin' as *;
+// extend 不能調用整個 function資料夾，在此只調用 mixin檔案
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+%btn-animation{
+    border-radius: $radius-ex;
+    @extend %flex-center;
+    cursor: pointer;
+    height: 40px;
+    width: 120px !important;
+    margin: $spacing-md auto;
+    @include bordered;
+    color: $forest;
+    letter-spacing: $spacing-sm;
+    padding-left: $spacing-sm;
+
+    &:hover{
+        @include animation($name:rotate);
+        
+        span {
+            @include animation($name:rotate);
+        }
+    }
+}

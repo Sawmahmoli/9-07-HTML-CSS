@@ -1,0 +1,575 @@
+@charset "UTF-8";
+/* 編碼要在第一行 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* google font import要在第二行 */
+
+@font-face {
+    font-family: "Morgan";
+    src: url(../webfonts/Morgan.ttf);
+}
+
+/* CSS變數 */
+/* 顏色樣式 */
+:root {
+    /* 灰階 */
+    --deep: #444;
+    --dark: #777;
+    --grey: #999;
+    --light: #f1f1f1;
+    /* 背景 */
+    --bg-1: #f2edf0;
+    --bg-2: #e6ece5;
+    --bg-3: #ecf0f4;
+    /* 輔助 */
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #8f6b6d;
+    /* 透明 */
+    --alpha-w-20: rgba(255, 255, 255, 0.2);
+    --alpha-w-40: rgba(255, 255, 255, 0.4);
+
+    --alpha-b-20: rgba(0, 0, 0, 0.2);
+    /* 尺寸 */
+    --ex: 999999;
+    /*zindex不加單位*/
+
+}
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    /* 不累加內距及邊框 */
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: 500;
+
+}
+
+/* Format document=shift+alt+F */
+
+/* 重置字體 */
+body {
+    /* 有兩個英文單字組成（含空格）、中文字體名稱需要加上「""」 */
+    /* 也可以全部都給「""」 */
+    font-family:
+        /*英文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    ;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+}
+
+/* 重置連接 */
+a {
+    display: block;
+    /* <a> 常用來設定尺寸，所以直接修改為block */
+    /* inline不支援尺寸設定 */
+    color: #777;
+    text-decoration: none;
+    /* 取消預設底線 */
+    /* 設定元素本身*/
+    /* 設定hover或秒數未滿，滑鼠無法顯示動畫 */
+    transition: 0.4s;
+}
+
+/* 共用區 **********************************************/
+/* 區塊標題 */
+
+.title {
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.title * {
+    /* 「*」取.title裡所有子元素 */
+    text-align: center;
+    font-weight: 700;
+}
+
+.title h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: solid 2px var(--deep);
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* 按鈕區 */
+.btn-animation {
+    /* position: relative; */
+    /* outline: none; */
+    text-decoration: none;
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* text-transform: uppercase; */
+    height: 40px;
+    width: 120px !important;
+    margin: 20px auto;
+    /* opacity: 1; */
+    background-color: #ffffff;
+    border: 1px solid var(--lesser-3);
+
+    /* 字距置中 */
+    letter-spacing: 5px;
+    padding-left: 5px;
+    /* 在文字前補字距空間 => 視覺置中 */
+}
+
+.btn-animation:hover {
+    animation: rotate .7s ease-in-out both;
+    /* 動畫名稱自定義 */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.btn-animation:hover span {
+    animation: storm .7s .1s ease-in-out both;
+    /* 動畫名稱自定義 */
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(3px, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(1px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+/* 頁首區 */
+/* id="#" ; class="." */
+#topbar {
+    position: fixed;
+    /*position權重高*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* position預設寬高為hug*/
+    /*w要手動寫*/
+    z-index: var(--ex);
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+div.logo {
+    width: 55px;
+}
+
+#topbar ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* icon選單 */
+.icon a {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+}
+
+/* 選單嵌入圖片 */
+/* svg自動 w:fill/h:auto*/
+/*其他點陣圖檔不會自動fill(100%)，要加上background-size100% */
+.icon-fb {
+    background-image: url(../images/icon-fb.svg);
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-fb:hover {
+    background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+/* 主選單 */
+#topbar .menu {
+    padding: 0 10px;
+    /*上下 左右*/
+    border-radius: 999px;
+    /* 玻璃擬態 */
+    /* background-color: var(--alpha-w-20); */
+
+    /* 漸層要使用背景影像 */
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .1), rgba(255, 255, 255, .4));
+    border: 2px solid var(--alpha-w-40);
+
+    /* 背景濾鏡 */
+    backdrop-filter: blur(10px);
+
+
+    /* 容器陰影：只針對元素本身，不套用子元素 */
+    box-shadow: 2px 4px 10px var(--alpha-b-20),
+        inset -1px -1px 1px var(--alpha-w-40);
+
+    /* 濾鏡陰影：會套用到所有子元素 */
+    /* 陰影(X軸 Y軸 模糊 展開 顏色) */
+    /* filter: drop-shadow(2px 4px 10px var(--alpha-w-20)); */
+
+    /* 文字陰影：只針對文字元素，包含子元素 */
+    /* text-shadow: 2px 4px 10px rgba(0,0,0,0.5); */
+}
+
+#topbar .menu a {
+    font-family: "Chapaza", sans-serif;
+    font-weight: 700;
+    margin: 10px;
+    border-bottom: 2px solid transparent;
+    /* 保留hover空間*/
+    /*以防尺寸變動*/
+}
+
+#topbar .menu a:hover {
+    color: #333;
+    border-bottom: 2px solid #666;
+    /*下邊框*/
+}
+
+/* 聯絡我們 */
+#contact {
+    position: relative;
+    /* 會影響RWD! */
+    display: flex;
+    flex-direction: column;
+    /*主軸垂直*/
+    justify-content: center;
+    /*主軸對齊：置中*/
+    align-items: center;
+    /*副軸對齊：置中*/
+
+    height: 100vh;
+    /* 背景影像預設排序高於背景顏色 */
+    /* background-image: image(../images/pt); */
+    background-color: var(--bg-1);
+}
+
+@media (max-width:820px) {
+    #contact {
+        height: auto;
+    }
+}
+
+#contact .content {
+    display: flex;
+    width: 60%;
+}
+
+@media(max-width:640px) {
+    #contact .content {
+        flex-direction: column;
+    }
+}
+
+#contact .content>* {
+    flex: 1;
+    /*父元素必須設定flex*/
+    margin: 0 15px;
+}
+
+#contact .content h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#content .address {
+    font-size: .8rem;
+    font-style: normal;
+    margin: 20px 0;
+}
+
+/* 標籤不加標點符號 */
+#contact figure {
+    position: absolute;
+    width: 250px;
+}
+
+@media(max-width:820px) {
+    #contact figure {
+        width: 200px;
+    }
+}
+
+@media(max-width:640px) {
+    #contact figure {
+        display: none;
+    }
+}
+
+#contact .flower1 {
+    left: 0;
+    bottom: -30px;
+}
+
+#contact .flower2 {
+    right: -30px;
+    top: 100px;
+    transform: rotate(-30deg);
+
+}
+
+
+/* 聯絡表單 */
+#contactform * {
+    display: block;
+    width: 100%;
+}
+
+#contactform label {
+    margin: 10px 0 5px;
+    font-weight: 700;
+}
+
+#contactform input,
+#contactform textarea {
+    border: 1px solid var(--lesser-3);
+    padding: 10px;
+    border-radius: 7px;
+    color: var(--lesser-4);
+}
+
+#contactform input:focus,
+#contactform textarea:focus {
+    outline: 2px solid var(--lesser-3);
+}
+
+#contactform input::placeholder,
+#contactform textarea::placeholder {
+    color: var(--lesser-3);
+    font-size: 0.75rem;
+}
+
+/* 頁尾區 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: var(--lesser-4);
+    color: var(--light);
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+footer h2 span {
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--light);
+    font-weight: 500;
+
+}
+
+footer .sitemap {
+    display: flex;
+}
+
+/* 「>」指定套用於第一層 */
+footer .sitemap>li {
+    margin: 0 10px;
+}
+
+footer small {
+    align-self: flex-end;
+    font-weight: 400;
+
+}
+
+@media (max-width:820px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer .sitemap {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width:640px) {
+    footer .sitemap {
+        flex-direction: column;
+    }
+
+    footer .sitemap ul {
+        padding-left: 12px;
+    }
+
+    footer .sitemap li{
+        padding: 10px 0;
+    }
+
+    footer small {
+        align-self: flex-start;
+        margin-top: 30px;
+        font-weight: 400;
+
+    }
+}
