@@ -261,6 +261,7 @@ a {
   background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
   border: solid 2px #284345;
   -Webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2), inset -1px -1px 1px rgba(255, 255, 255, 0.4);
 }
 #topbar .menu a {
