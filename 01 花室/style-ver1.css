@@ -378,7 +378,7 @@ div.logo {
 
 #topbar .menu a {
     font-family: "Chapaza", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     margin: 10px;
     border-bottom: 2px solid transparent;
     /* 保留hover空間*/
@@ -387,6 +387,7 @@ div.logo {
 
 #topbar .menu a:hover {
     color: #333;
+    font-weight: 700;
     border-bottom: 2px solid #666;
     /*下邊框*/
 }
@@ -395,6 +396,10 @@ div.logo {
 #contact {
     position: relative;
     /* 會影響RWD! */
+
+    overflow: hidden;
+    /* 隱藏花朵 */
+
     display: flex;
     flex-direction: column;
     /*主軸垂直*/
@@ -437,7 +442,8 @@ div.logo {
     font-weight: 700;
 }
 
-#content .address {
+/* 標籤不加標點符號 */
+#content address {
     font-size: .8rem;
     font-style: normal;
     margin: 20px 0;
@@ -491,6 +497,7 @@ div.logo {
     padding: 10px;
     border-radius: 7px;
     color: var(--lesser-4);
+    font-weight: 400;
 }
 
 #contactform input:focus,

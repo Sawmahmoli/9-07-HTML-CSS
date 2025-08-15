@@ -36,7 +36,7 @@
 }
 
 .logo {
-    width: $w-50;
+    width: 50px;
 }
 
 .icon {
@@ -64,7 +64,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: $w-80;
+    width: $w-100;
     z-index: $z-ex;
     @extend %flex-between;
     padding: $spacing-xs $spacing-xl;
@@ -81,13 +81,14 @@
 
         a {
             font-family: $family-en;
-            font-weight: $f-w-b;
+            font-weight: $f-w-m;
             margin: $spacing-xs;
-            @include border-bottom($width:2px, $color:transparent);
+            @include border-bottom($width: 2px, $color: transparent);
 
-            &:hover{
-                color:$black;
-                @include border-bottom($width:2px, $color:$black);
+            &:hover {
+                color: $black;
+                font-weight: $f-w-b;
+                @include border-bottom($width: 2px, $color: $black);
             }
 
         }
@@ -96,8 +97,161 @@
 
 }
 
-#contactform {
-    .btn-animation {
-        @extend %btn-animation;
+#contact {
+    position: relative;
+    overflow: hidden;
+    @extend %flex-center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $bg-1;
+
+    @media($mediaMd) {
+        height: auto;
+    }
+
+    .content {
+        display: flex;
+        width: $w-50;
+
+        * {
+
+            flex: 1;
+            margin: $spacing-x-sm;
+
+        }
+
+        @media($mediaSm) {
+            flex-direction: column;
+        }
+
+
+        h1 {
+            font-size: $f-s-xl;
+            font-weight: $f-w-b; // 700
+        }
+
+        address {
+            font-size: $f-s-sm;
+            font-style: normal;
+            margin: 0;
+        }
+
+        // 地圖
+        iframe {
+            width: $w-100;
+            height: 300px;
+        }
+
+        // 聯絡表單
+        #contactform {
+            * {
+                display: block;
+                width: $w-100;
+            }
+
+            label {
+                margin: $spacing-label;
+                font-weight: $f-w-b;
+            }
+
+            .btn-animation {
+                @extend %btn-animation;
+            }
+
+            input {
+                @extend %input-style;
+            }
+
+            textarea {
+                @extend %input-style;
+            }
+        }
+
+    }
+
+
+    figure {
+        position: absolute;
+        width: 250px;
+
+        @media($mediaMd) {
+            width: 200px;
+        }
+
+        @media($mediaSm) {
+            display: none;
+        }
+    }
+
+    .flower1 {
+        left: 0;
+        bottom: -30px;
+    }
+
+    .flower2 {
+        right: -30px;
+        top: 100px;
+        transform: rotate(-30deg);
+    }
+
+}
+
+/* 頁尾區 ---------------------------------------------*/
+footer {
+    @extend %flex-between;
+    padding: $spacing-md $spacing-xl;
+    background-color: $forest;
+    color: $cream;
+
+    h2 {
+        font-size: $f-s-xl;
+        font-weight: $f-w-b;
+
+        span {
+            font-size: $f-s-md;
+        }
+    }
+
+    a {
+        color: $sea;
+        font-weight: $f-w-m;
+    }
+
+    .sitemap {
+        display: flex;
+
+        @media ($mediaMd) {
+            margin-top: $spacing-xl;
+        }
+
+        @media ($mediaSm) {
+            flex-direction: column;
+
+            ul {
+                padding-left: 12px;
+
+                li {
+                    padding: $spacing-xs 0;
+                }
+            }
+        }
+
+        // 「>」指定套用於第一層
+        >li {
+            margin: 0 $spacing-xs;
+        }
+    }
+
+    small {
+        align-self: flex-end;
+        margin-top: $spacing-xl;
+        font-weight: $f-w-l;
+        font-size: $f-s-xs;
+
+        @media ($mediaSm) {
+            align-self: flex-start;
+            margin-top: $spacing-xs;
+        }
+
     }
 }

@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="">
+ <title>花室</title>
+ <link rel="stylesheet" href="./css/style.min.css">
+ <!-- 16*16 > 三倍！ -->
+ <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body>
-    
+    <!-- 頁首區 -->
+    <header id="topbar">
+        <!-- logo區 -->
+        <div class="logo">
+            <!-- figure將多個影像封裝成一個群組 -->
+            <!-- alt屬性用來說明圖片檔案內容(影響seo，可以留空值但不能刪除) -->
+            <img src="./images/logo_f.svg" alt="logo">
+        </div>
+        <!-- 導覽列 -->
+        <nav class="navigation">
+            <!-- ul=無序清單 ol=有序清單 兩者元素皆為li-->
+            <!-- icon選單 -->
+            <ul class="icon"><!-- 快速鍵 ul>li*6>a -->
+                <li><a class="icon-fb" href="#"></a></li>
+                <li><a class="icon-ig" href="#"></a></li>
+                <li><a class="icon-line" href="#"></a></li>
+            </ul>
+
+            <!-- 主選單 -->
+            <ul class="menu"><!-- 快速鍵<ul>li*6>a -->
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main>
+        <section id="banner"></section>
+        <section id="news">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>NEWS</h2>
+                <h3>最新消息</h3>
+            </header>
+        </section>
+        <section id="service">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>SERVICE</h2>
+                <h3>服務項目</h3>
+            </header>
+        </section>
+        <section id="video">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>VIDEO</h2>
+                <h3>瀏覽影片</h3>
+            </header>
+        </section>
+        <section id="about">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>ABOUT</h2>
+                <h3>關於我們</h3>
+            </header>
+        </section>
+    </main>
+
+    <!-- 頁尾區 -->
+    <footer>
+        <h2>花室 <span>Flower Shop</span></h2>
+        <nav>
+            <!-- 快捷鍵-- ul>li>*6>a -->
+            <ul class="sitemap">
+                <li><a href=".index.html">HOME</a></li>
+                <li>
+                    <a href="#">NEWS</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">優惠活動</a></li>
+                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="#">商店公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">SERVICE</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">服務項目1</a></li>
+                        <li><a href="#">服務項目2</a></li>
+                        <li><a href="#">服務項目3</a></li>
+                        <li><a href="#">服務項目4</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <small>Copyright &copy; 花市 Flower Shop</small>
+    </footer>
 </body>
 </html>
