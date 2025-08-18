@@ -3,51 +3,69 @@
 // extend 不能調用整個 function資料夾，在此只調用 mixin檔案
 // extend語法在css會置頂
 
-%flex-center{
+%flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-%flex-between{
+%flex-between {
     display: flex;
     justify-content: space-between;
 }
 
-%btn-animation{
+%flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+%multiple-line {  // 多行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+%img-cover {  // 直接設定在子元素上
+    object-fit: cover;
+    // width: 100%; => reset已設定
+    height: 100%;
+}
+
+%btn-animation {
     border-radius: $radius-ex;
     @extend %flex-center;
     cursor: pointer;
     height: 40px;
-    width: 140px ;
+    width: 140px;
     margin: $spacing-md auto;
     @include bordered;
     color: $forest;
     letter-spacing: $spacing-sm;
     padding-left: $spacing-sm;
 
-    &:hover{
-        @include animation($name:rotate);
-        
+    &:hover {
+        @include animation($name: rotate);
+
         span {
-            @include animation($name:rotate);
+            @include animation($name: rotate);
         }
     }
 }
 
-%input-style{
+%input-style {
     // border: 1px solid var(--lesser-3);
     @include bordered;
     padding: $spacing-xs;
-    border-radius:$radius-sm;
+    border-radius: $radius-sm;
     color: $forest;
-    font-weight:$f-w-r;
+    font-weight: $f-w-r;
 
-    &:focus{
+    &:focus {
         outline: 2px solid $slate
     }
 
-    &::placeholder{
+    &::placeholder {
         color: $slate;
         font-size: $f-s-xs;
         font-weight: $f-w-m;

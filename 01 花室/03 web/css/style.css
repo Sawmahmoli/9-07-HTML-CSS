@@ -88,7 +88,7 @@ video {
   margin: 0;
   padding: 0;
   font-size: 100%;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 body {
@@ -123,7 +123,7 @@ a {
 }
 
 /* reset end */
-#contact, #contact .content #contactform .btn-animation {
+#index section, #contact, #contact .content #contactform .btn-animation {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,6 +134,18 @@ a {
   justify-content: space-between;
 }
 
+#news .text-box p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+#news figure img {
+  object-fit: cover;
+  height: 100%;
+}
+
 #contact .content #contactform .btn-animation {
   border-radius: 99px;
   cursor: pointer;
@@ -141,7 +153,7 @@ a {
   width: 140px;
   margin: 20px auto;
   border: solid 1px #171414;
-  color: #284345;
+  color: #EAD8CF;
   letter-spacing: 15px;
   padding-left: 15px;
 }
@@ -156,7 +168,7 @@ a {
   border: solid 1px #171414;
   padding: 10px;
   border-radius: 6px;
-  color: #284345;
+  color: #EAD8CF;
   font-weight: 400;
 }
 #contact .content #contactform input:focus, #contact .content #contactform textarea:focus {
@@ -165,7 +177,7 @@ a {
 #contact .content #contactform input::placeholder, #contact .content #contactform textarea::placeholder {
   color: #81817f;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @keyframes rotate {
@@ -208,23 +220,46 @@ a {
 }
 /* 共用區 ---------------------------------------------*/
 .title {
-  margin: 110px 0 30px;
+  margin: 25px 0 30px;
+  position: relative;
 }
 .title * {
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
 }
 .title h2 {
   font-family: "Raleway", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.2rem;
   border-bottom: solid 1px #171414;
+  position: relative;
+}
+.title h2::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: -35px;
+  background-color: #E8EC8D;
+  width: 17px;
+  height: 17px;
+  border-radius: 99px;
 }
 .title h3 {
   font-family: "PingFang TC", normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.2rem;
   margin-top: 10px;
+  position: relative;
+}
+.title h3::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: -28px;
+  background-color: #E8EC8D;
+  width: 10px;
+  height: 10px;
+  border-radius: 99px;
 }
 
 .logo {
@@ -235,6 +270,15 @@ a {
   width: 35px;
   height: 35px;
   margin: 5px;
+}
+
+.more {
+  width: 120px;
+  text-align: center;
+  background-color: #E8EC8D;
+  border-radius: 99px;
+  vertical-align: middle;
+  margin: 25px;
 }
 
 .icon-fb {
@@ -281,7 +325,7 @@ a {
 }
 #topbar .menu a {
   font-family: "Raleway", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   margin: 10px;
   border-bottom: solid 2px transparent;
 }
@@ -289,6 +333,62 @@ a {
   color: #000000;
   font-weight: 700;
   border-bottom: solid 2px #000000;
+}
+
+/* 主要內容區 ---------------------------------------------*/
+#index section {
+  flex-direction: column;
+  height: 100vh;
+}
+
+.list-box {
+  display: flex;
+  gap: 25px;
+  width: 80%;
+  max-width: 1200px;
+}
+.list-box .item {
+  flex: 1;
+  border: solid 1px #171414;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#news {
+  background-color: #fff6f8;
+}
+#news figure {
+  height: 30vh;
+}
+#news .text-box {
+  padding: 20px;
+}
+#news .text-box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#news .text-box p {
+  text-align: justify;
+  -webkit-line-clamp: 5;
+}
+
+#service .item {
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+}
+#service .item:nth-child(1) {
+  background-image: url(../images/pt_svc1.jpg);
+}
+#service .item:nth-child(2) {
+  background-image: url(../images/pt_svc2.jpg);
+}
+#service .item:nth-child(3) {
+  background-image: url(../images/pt_svc3.jpg);
+}
+#service .item:nth-child(4) {
+  background-image: url(../images/pt_svc4.jpg);
 }
 
 #contact {
@@ -364,8 +464,8 @@ a {
 /* 頁尾區 ---------------------------------------------*/
 footer {
   padding: 20px 30px;
-  background-color: #284345;
-  color: #f3efe6;
+  background-color: #EAD8CF;
+  color: #2d2c2b;
 }
 footer h2 {
   font-size: 1.5rem;
@@ -375,8 +475,8 @@ footer h2 span {
   font-size: 1rem;
 }
 footer a {
-  color: #d6ede2;
-  font-weight: 500;
+  color: #171414;
+  font-weight: 600;
 }
 footer .sitemap {
   display: flex;

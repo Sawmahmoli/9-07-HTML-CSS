@@ -13,7 +13,8 @@
 
 // 區塊標題
 .title {
-    margin: $spacing-ex 0 $spacing-xl;
+    margin: $spacing-lg 0 $spacing-xl;
+    position: relative;
 
     * {
         text-align: center;
@@ -22,17 +23,43 @@
 
     h2 {
         font-family: $family-display;
-        font-weight: $f-w-b;
+        font-weight: $f-w-m;
         font-size: $f-s-lg;
         @include border-bottom;
+        position: relative;
+
+        &::before {
+            content: ""; // 必填項目！
+            position: absolute;
+            bottom: 5px;
+            left: -35px;
+            background-color: $grass;
+            width: 17px;
+            height: 17px;
+            border-radius: $radius-ex;
+        }
     }
 
     h3 {
         font-family: $family-tc;
-        font-weight: $f-w-m;
+        font-weight: $f-w-r;
         font-size: $f-s-lg;
         margin-top: 10px;
+        position: relative;
+
+        &::after {
+            content: ""; // 必填項目！
+            position: absolute;
+            bottom: 10px;
+            right: -28px;
+            background-color: $grass;
+            width: 10px;
+            height: 10px;
+            border-radius: $radius-ex;
+        }
+
     }
+
 }
 
 .logo {
@@ -47,8 +74,17 @@
     }
 }
 
-// 迴圈
-// 不調用，直接編譯語法（不寫入function
+.more {
+    width: 120px;
+    // line-height: 40px; // 單行文字垂直置中，可以使用行高取代高度
+    text-align: center;
+    background-color: $grass;
+    border-radius: $radius-ex;
+    vertical-align: middle;
+    margin: $spacing-lg;
+}
+
+// 迴圈 => 不調用，直接編譯語法（不寫入function
 @each $social in fb, ig, line {
     .icon-#{$social} {
         background-image: url(../images/icon-#{$social}.svg);
@@ -97,6 +133,89 @@
 
 }
 
+/* 主要內容區 ---------------------------------------------*/
+#index {
+    section {
+        @extend %flex-center;
+        flex-direction: column;
+        height: 100vh;
+    }
+}
+
+.list-box {
+    display: flex;
+    gap: $spacing-lg;
+    width: $w-80;
+    max-width: 1200px; // 集中閱讀
+
+    .item {
+        flex: 1;
+        @include bordered;
+        border-radius: $radius-md;
+        overflow: hidden; // 超過圓角圖片被隱藏
+    }
+}
+
+// 最新消息
+#news {
+    background-color: $cream;
+
+    figure {
+        height: 30vh;
+
+        img {
+            @extend %img-cover;
+        }
+    }
+
+    .text-box {
+        padding: $spacing-md;
+
+        h2 {
+            font-size: $f-s-lg;
+            font-weight: $f-w-m;
+            margin-bottom: $spacing-xs;
+        }
+
+        p {
+            text-align: justify; // 齊行 => 英文文案不適用
+            @extend %multiple-line;
+            -webkit-line-clamp: 5;
+
+        }
+
+    }
+
+}
+
+// 服務項目
+#service {
+    .item {
+        height: 50px;
+        background-size: cover;  // 自動縮放並剪裁
+        background-position: center;  // 背景置中要另外寫
+
+        &:nth-child(1) {
+            background-image: url(../images/pt_svc1.jpg);
+        }
+
+        &:nth-child(2) {
+            background-image: url(../images/pt_svc2.jpg);
+        }
+
+        &:nth-child(3) {
+            background-image: url(../images/pt_svc3.jpg);
+        }
+
+        &:nth-child(4) {
+            background-image: url(../images/pt_svc4.jpg);
+        }
+
+
+    }
+}
+
+// 聯絡我們
 #contact {
     position: relative;
     overflow: hidden;
@@ -201,7 +320,7 @@ footer {
     @extend %flex-between;
     padding: $spacing-md $spacing-xl;
     background-color: $forest;
-    color: $cream;
+    color: $deep-gray;
 
     h2 {
         font-size: $f-s-xl;
@@ -213,7 +332,7 @@ footer {
     }
 
     a {
-        color: $sea;
+        color: $charcoal;
         font-weight: $f-w-m;
     }
 
