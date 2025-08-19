@@ -21,7 +21,7 @@
 
 %img-cover {  // 直接設定在子元素上
     object-fit: cover;
-    // width: 100%; => reset已設定
+    width: 100%; // <img> => reset 已設定
     height: 100%;
 }
 
@@ -33,13 +33,13 @@
     width: 140px;
     margin: $spacing-md auto;
     @include bordered;
-    color: $forest;
+    color: $caramel;
     letter-spacing: $spacing-sm;
     padding-left: $spacing-sm;
-    
+
     &:hover {
         @include animation($name: rotate);
-        
+
         span {
             @include animation($name: rotate);
         }
@@ -51,13 +51,13 @@
     @include bordered;
     padding: $spacing-xs;
     border-radius: $radius-sm;
-    color: $forest;
+    color: $caramel;
     font-weight: $f-w-r;
-    
+
     &:focus {
         outline: 2px solid $slate
     }
-    
+
     &::placeholder {
         color: $slate;
         font-size: $f-s-xs;
@@ -65,9 +65,22 @@
     }
 }
 
-%multiple-line {  // 多行省略
+%multiple-line {
+    // 多行省略
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+}
+
+%single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%list-title {
+    font-size: $f-s-lg;
+    font-weight: $f-w-m;
+    margin-bottom: $spacing-xs;
 }

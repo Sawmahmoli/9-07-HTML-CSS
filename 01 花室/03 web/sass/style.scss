@@ -76,11 +76,11 @@
 
 .more {
     width: 120px;
-    // line-height: 40px; // 單行文字垂直置中，可以使用行高取代高度
+    line-height: 40px; // 單行文字垂直置中，可以使用行高取代高度
     text-align: center;
     background-color: $grass;
     border-radius: $radius-ex;
-    vertical-align: middle;
+    // vertical-align: middle;
     margin: $spacing-lg;
 }
 
@@ -139,6 +139,13 @@
         @extend %flex-center;
         flex-direction: column;
         height: 100vh;
+
+        @media($mediaMd) {
+            &video {
+                height: auto;
+                padding-bottom: $spacing-ex;
+            }
+        }
     }
 }
 
@@ -156,44 +163,94 @@
     }
 }
 
+
 // 最新消息
 #news {
-    background-color: $cream;
+    background-color: $rose;
 
-    figure {
-        height: 30vh;
+    article {
+        @media($mediaMd) {
+            &:last-child {
+                display: none;
+            }
+        }
 
-        img {
-            @extend %img-cover;
+        @media($mediaSm) {
+            &:nth-child(n+2) {
+                // 第二個以後的所有子元素
+                display: none;
+            }
+        }
+
+        a {
+            &:hover {
+                .text-box {
+                    background-color: $grass;
+                }
+
+                figure {
+                    filter: brightness(60%);
+                }
+            }
+
+            figure {
+                height: 30vh;
+                transition: $speed-fast;
+
+                img {
+                    @extend %img-cover;
+                }
+            }
+
+            .text-box {
+                padding: $spacing-md;
+                transition: $speed-fast;
+
+                h2 {
+                    @extend %list-title
+                }
+
+                p {
+                    text-align: justify; // 齊行 => 英文文案不適用
+                    @extend %multiple-line;
+                    -webkit-line-clamp: 5;
+                }
+            }
         }
     }
-
-    .text-box {
-        padding: $spacing-md;
-
-        h2 {
-            font-size: $f-s-lg;
-            font-weight: $f-w-m;
-            margin-bottom: $spacing-xs;
-        }
-
-        p {
-            text-align: justify; // 齊行 => 英文文案不適用
-            @extend %multiple-line;
-            -webkit-line-clamp: 5;
-
-        }
-
-    }
-
 }
 
 // 服務項目
 #service {
+    background-color: $bg-2;
+
+    .list-box {
+        @media($mediaMd) {
+            flex-direction: column;
+            height: 70vh; // 主軸垂直，高度轉換為hug => 影響子元素
+        }
+    }
+
     .item {
-        height: 50px;
-        background-size: cover;  // 自動縮放並剪裁
-        background-position: center;  // 背景置中要另外寫
+        display: flex;
+        align-items: flex-end;
+        height: 50vh;
+        background-size: cover; // 自動縮放並剪裁
+        background-position: center; // 背景置中要另外寫
+
+        @media($mediaMd) {
+            &:nth-child(n+3) {
+                // 第三個(含)以後作用
+                display: none;
+            }
+        }
+
+        @media($mediaSm) {
+            &:nth-child(n+2) {
+                // 第二個(含)以後作用
+                display: none;
+            }
+        }
 
         &:nth-child(1) {
             background-image: url(../images/pt_svc1.jpg);
@@ -209,7 +266,67 @@
 
         &:nth-child(4) {
             background-image: url(../images/pt_svc4.jpg);
+
+            @media($mediaMd) {
+                display: none;
+            }
         }
+
+        a {
+            width: 100%; // flex會讓a變成hug => 必須手動設定寬度 
+            padding: $spacing-md;
+            color: $white;
+            background-color: $alpha-b-60;
+        }
+
+        p {
+            @extend %single-line;
+        }
+
+        &:hover {
+            color: $slate;
+            background-color: $alpha-w-70;
+            ;
+        }
+    }
+}
+
+// 相關影片
+#video {
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover; // 自動延展（超過會剪裁）
+    background-position: center; // bg-cover建議加上position！
+    background-attachment: fixed; // 固定背景
+
+    div {
+        @extend %flex-center;
+        height: 50vh; // 設定寬度可能等比例超過視窗 => 改為設定高度
+
+        @media($mediaMd) {
+            width: 80%;
+            height: auto;
+        }
+
+        video {
+            height: 100%;
+
+            @media($mediaMd) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+// 關於我們
+#about {
+    position: relative;
+    background-color: $bg-3;
+
+    video {
+        position: absolute;
+        @extend %img-cover;
+        mix-blend-mode: overlay;
     }
 }
 
@@ -317,7 +434,7 @@
 footer {
     @extend %flex-between;
     padding: $spacing-md $spacing-xl;
-    background-color: $forest;
+    background-color: $caramel;
     color: $deep-gray;
 
     h2 {

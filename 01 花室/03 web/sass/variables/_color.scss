@@ -1,9 +1,9 @@
 // color
-$primary:#5e6c5b;
-$cream:#fff6f8;
-$sea:#d6ede2;
+$primary:#FBBEC5;
+$rose:#fff6f9;
+$sea:#dbe7ee;
 $slate:#81817f;
-$forest:#EAD8CF;
+$caramel:#EAD8CF;
 $grass: #E8EC8D;
 
 $mode-dark: #3e3e3b;
@@ -11,6 +11,7 @@ $mode-light: #e2e2e2;
 
 // Neutral colors
 $white: #fff;
+$brown:#64503C;
 
 // $light:;           
 $light-gray:#faf5f2;
@@ -22,13 +23,13 @@ $black: #000000;
 
 // background
 $bg-1:#f3efe6;;
-// $bg-2:;
-// $bg-3:;
+$bg-2:#f6dccf;
+$bg-3:#d1c5c3;
 
 // Secondary
 $lesser-1:#d6e0e2;
-// $lesser-2:;
-// $lesser-3:;
+$lesser-2:#ECD885;
+$lesser-3:#B3B6F4;
 
 // alpha
 $alpha-w-10:rgba(255, 255, 255, 0.1);
@@ -37,6 +38,8 @@ $alpha-w-40:rgba(255, 255, 255, 0.4);
 $alpha-w-70:rgba(255, 255, 255, 0.7);
 
 $alpha-b-20:rgba(0, 0, 0, 0.2);
+$alpha-b-60:rgba(0, 0, 0, 0.6);
+
 
 $alpha-20: 0.2;
 $alpha-30: 0.3;
