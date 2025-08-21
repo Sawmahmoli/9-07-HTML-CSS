@@ -222,7 +222,7 @@
 
 // 服務項目
 #service {
-    background-color: $bg-2;
+    background-color: $caramel;
 
     .list-box {
         @media($mediaMd) {
@@ -323,10 +323,88 @@
     position: relative;
     background-color: $bg-3;
 
-    video {
+    div {
         position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 70%;
+        padding-top: 5%;
+        background-color: $light-gray;
+        display: flex;
+        @extend %flex-center;
+        flex-direction: column;
+
+        @media($mediaMd) {
+            width: 90%;
+        }
+
+        p {
+            overflow: auto;
+            width: 80%;
+            margin-bottom: $spacing-ex;
+            padding-right: $spacing-sm;
+
+            &::-webkit-scrollbar {
+                // 滾動條
+                // background-color: $bg-2;
+                border-radius: $radius-ex;
+                width: 12px;
+                height: 12px;
+            }
+
+            &::-webkit-scrollbar-button {
+                // 方向按鈕
+                // background-color: $lesser-3;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 12px;
+                height: 12px;
+
+                &:vertical:single-button:start {
+                    background-image: url(../images/arrow-up.svg);
+                }
+
+                &:vertical:single-button:end {
+                    background-image: url(../images/arrow-down.svg);
+                }
+
+                &:horizontal:single-button:start {
+                    background-image: url(../images/arrow-left.svg);
+                }
+
+                &:horizontal:single-button:endt {
+                    background-image: url(../images/arrow-right.svg);
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                // 手柄
+                background-color: $lesser-3;
+                border-radius: $radius-ex;
+            }
+
+            &::-webkit-scrollbar-track {
+                // 滾動軌道（不含按鈕範圍
+                background-color: $bg-2;
+                border-radius: $radius-ex;
+                margin: 5px;
+
+            }
+
+            &::-webkit-scrollbar-track-piece {
+                // 未被手柄遮住的軌道
+                height: 12px;
+                border-radius: $radius-ex;
+
+            }
+        }
+    }
+
+    video {
         @extend %img-cover;
         mix-blend-mode: overlay;
+        filter: brightness(70%) contrast(110%);
     }
 }
 
@@ -398,6 +476,12 @@
 
             textarea {
                 @extend %input-style;
+                border-bottom-right-radius: 0;
+
+                &::-webkit-resizer {
+                    background-image: url(../images/arrow-45.svg);
+                }
+
             }
         }
 

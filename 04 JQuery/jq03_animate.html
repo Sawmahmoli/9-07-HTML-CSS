@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>animate動畫</title>
+</head>
+<style>
+    .box {
+        background-color: #E8EC8D;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <button id="btn1">\ +++ /</button>
+    <button id="btn2">return</button>
+
+    <div class="box"></div>
+
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function(){
+                $('.box').animate({height:"700px"},8000,"linear");
+            });
+
+            $('#btn2').click(function(){
+                $('.box').animate({height:"100px"});
+            });
+        });
+    </script>
+</body>
+
+</html>
