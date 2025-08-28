@@ -134,6 +134,11 @@ a {
   justify-content: space-between;
 }
 
+#topbar .navbar .navigation ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #news article a figure img, #about video {
   object-fit: cover;
   width: 100%;
@@ -193,6 +198,24 @@ a {
   margin-bottom: 10px;
 }
 
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+    display: flex;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -324,25 +347,80 @@ a {
   z-index: 99999;
   padding: 10px 30px;
 }
-#topbar ul {
+#topbar .navbar {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
-#topbar .menu {
+#topbar .navbar .hamburger {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+}
+@media (min-width:971px) {
+  #topbar .navbar .hamburger {
+    display: none;
+  }
+}
+#topbar .navbar .hamburger .bar {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: #E8EC8D;
+  margin: 5px auto;
+  transition: 0.35s;
+}
+#topbar .navbar .hamburger.is-active .bar:nth-child(1) {
+  transform: rotate(30deg) translate(0px, 10px);
+}
+#topbar .navbar .hamburger.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+#topbar .navbar .hamburger.is-active .bar:nth-child(3) {
+  transform: rotate(-30deg) translate(4px, -10px);
+}
+@media (max-width:970px) {
+  #topbar .navbar .navigation {
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    border: solid 2px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2), inset -1px -1px 1px rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    flex-direction: column;
+    display: none;
+    animation: hide 0.7s ease-in-out both;
+  }
+  #topbar .navbar .navigation.show {
+    display: flex;
+    animation: show 0.7s ease-in-out both;
+  }
+}
+#topbar .navbar .navigation .menu {
   padding: 0 10px;
   border-radius: 99px;
-  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
-  border: solid 2px rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2), inset -1px -1px 1px rgba(255, 255, 255, 0.4);
+  padding: 5px;
 }
-#topbar .menu a {
+@media (min-width:971px) {
+  #topbar .navbar .navigation .menu {
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    border: solid 2px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2), inset -1px -1px 1px rgba(255, 255, 255, 0.4);
+  }
+}
+@media (max-width:970px) {
+  #topbar .navbar .navigation .menu {
+    flex-direction: column;
+    order: -1;
+  }
+}
+#topbar .navbar .navigation .menu a {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   margin: 10px;
   border-bottom: solid 2px transparent;
 }
-#topbar .menu a:hover {
+#topbar .navbar .navigation .menu a:hover {
   color: #000000;
   font-weight: 700;
   border-bottom: solid 2px #000000;
@@ -679,6 +757,7 @@ footer small {
   }
 }
 footer #gotop {
+  display: none;
   width: 50px;
   height: 50px;
   background-color: #ECD885;
@@ -692,4 +771,7 @@ footer #gotop {
 }
 footer #gotop:hover {
   background-color: #E8EC8D;
+}
+footer #gotop:hover img {
+  filter: invert(0%);
 }

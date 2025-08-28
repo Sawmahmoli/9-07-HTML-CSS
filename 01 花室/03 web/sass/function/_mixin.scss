@@ -19,6 +19,6 @@
     backdrop-filter: blur(10px);
     // 容器陰影：只針對元素本身，不套用子元素
     box-shadow: 2px 4px 10px $alpha-w-20,
-    inset -1px -1px 1px $alpha-w-40;
+        inset -1px -1px 1px $alpha-w-40;
 
 }

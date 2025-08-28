@@ -105,33 +105,106 @@
     @extend %flex-between;
     padding: $spacing-xs $spacing-xl;
 
-    ul {
+    .navbar {
         display: flex;
-        justify-content: flex-end;
-    }
+        flex-direction: column;
+        align-items: flex-end;
 
-    .menu {
-        padding: $spacing-x-xs;
-        border-radius: $radius-ex;
-        @include glassmorphism;
+        // 漢堡按鈕
+        .hamburger {
+            background-color: transparent;
+            border: none;
+            margin-bottom: $spacing-xs;
 
-        a {
-            font-family: $family-en;
-            font-weight: $f-w-m;
-            margin: $spacing-xs;
-            @include border-bottom($width: 2px, $color: transparent);
-
-            &:hover {
-                color: $black;
-                font-weight: $f-w-b;
-                @include border-bottom($width: 2px, $color: $black);
+            @media ($mediaXl) {
+                display: none;
             }
 
+            .bar {
+                display: block;
+                width: 32px;
+                height: 2px;
+                background-color: $grass;
+                margin: 5px auto;
+                transition: 0.35s;
+            }
+
+            &.is-active {
+                .bar {
+                    &:nth-child(1) {
+                        transform: rotate(30deg) translate(0px, 10px);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-30deg) translate(4px, -10px);
+                    }
+                }
+            }
         }
 
-    }
+        // 導覽列
+        .navigation {
+            @media ($mediaLg) {
+                // 0-970
+                @include glassmorphism;
+                border-radius: $radius-md;
+                flex-direction: column;
+                display: none; // 先隱藏
+                @include animation ($name: hide);
 
+                &.show {
+                    display: flex; // 點擊後顯示
+                    @include animation ($name: show);
+                }
+
+            }
+
+            ul {
+                @extend %flex-end;
+            }
+
+            // 主選單
+            .menu {
+                padding: $spacing-x-xs;
+                border-radius: $radius-ex;
+                padding: $spacing-xxs;
+
+                @media($mediaXl) {
+                    // 970以上
+                    @include glassmorphism;
+                }
+
+                @media ($mediaLg) {
+                    flex-direction: column;
+                    order: -1; // 父層要加上 display:flex
+                }
+
+                a {
+                    font-family: $family-en;
+                    font-weight: $f-w-m;
+                    margin: $spacing-xs;
+                    @include border-bottom($width: 2px, $color: transparent);
+
+                    &:hover {
+                        color: $black;
+                        font-weight: $f-w-b;
+                        @include border-bottom($width: 2px, $color: $black);
+                    }
+
+                }
+
+            }
+
+
+        }
+    }
 }
+
+
 
 /* 主要內容區 ---------------------------------------------*/
 #index {
@@ -574,7 +647,7 @@ footer {
     }
 
     #gotop {
-        // display: none;
+        display: none;
         width: 50px;
         height: 50px;
         background-color: $lesser-2;
@@ -590,6 +663,10 @@ footer {
 
         &:hover {
             background-color: $grass;
+
+            img {
+                filter: invert(0%);
+            }
         }
     }
 }

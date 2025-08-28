@@ -21,31 +21,43 @@
     <header id="topbar">
         <!-- logo區 -->
         <div class="logo">
-            <!-- figure將多個影像封裝成一個群組 -->
-            <!-- alt屬性用來說明圖片檔案內容(影響seo，可以留空值但不能刪除) -->
-            <img src="./images/logo_f.svg" alt="logo">
+            <a href="./index.html">
+                <!-- figure將多個影像封裝成一個群組 -->
+                <!-- alt屬性用來說明圖片檔案內容(影響seo，可以留空值但不能刪除) -->
+                <img src="./images/logo_f.svg" alt="logo">
+            </a>
         </div>
-        <!-- 導覽列 -->
-        <nav class="navigation">
-            <!-- ul=無序清單 ol=有序清單 兩者元素皆為li-->
-            <!-- icon選單 -->
-            <ul class="icon"><!-- 快速鍵 ul>li*6>a -->
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-            </ul>
 
-            <!-- 主選單 -->
-            <ul class="menu"><!-- 快速鍵<ul>li*6>a -->
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#service">SERVICE</a></li>
-                <li><a href="#video">VIDEO</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
+        <div class="navbar">
+            <!-- 漢堡按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
 
-        </nav>
+            <!-- 導覽列 -->
+            <nav class="navigation">
+                <!-- ul=無序清單 ol=有序清單 兩者元素皆為li-->
+                <!-- icon選單 -->
+                <ul class="icon"><!-- 快速鍵 ul>li*6>a -->
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                </ul>
+
+                <!-- 主選單 -->
+                <ul class="menu"><!-- 快速鍵<ul>li*6>a -->
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+                </ul>
+
+            </nav>
+        </div>
     </header>
 
     <!-- 主要內容區 -->
@@ -135,14 +147,14 @@
         </section>
         <section id="news">
             <!-- 區塊標題 -->
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <div class="list-box">
                 <!-- Emmet縮寫：()定義同階層 []定義屬性 -->
                 <!-- article.item*3>a>figure+div.text-box>h2+p -->
-                <article class="item">
+                <article class="item smoove" data-move-x="-500px" data-rotate="90deg">
                     <a href="">
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
                         <div class="text-box">
@@ -155,7 +167,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-250px" data-rotate="45deg">
                     <a href="">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="text-box">
@@ -168,7 +180,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-500px" data-rotate="-90deg">
                     <a href="">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="text-box">
@@ -186,34 +198,34 @@
         </section>
         <section id="service">
             <!-- 區塊標題 -->
-            <header class="title">
+            <header class="title smoove">
                 <h2>SERVICE</h2>
                 <h3>服務項目</h3>
             </header>
             <!-- ul.list-box>li.item>a[href="#]>h2(SERVICE TITLE)+p -->
             <ul class="list-box">
-                <li class="item">
+                <li class="item smoove" data-move-x="-300px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quae quos iste fuga
                             accusamus nostrum saepe dolore rerum sequi magnam?</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="-150px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quae quos iste fuga
                             accusamus nostrum saepe dolore rerum sequi magnam?</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="150px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quae quos iste fuga
                             accusamus nostrum saepe dolore rerum sequi magnam?</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="300px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quae quos iste fuga
@@ -224,17 +236,17 @@
         </section>
         <section id="video">
             <!-- 區塊標題 -->
-            <header class="title">
+            <header class="title smoove">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
-            <div>
+            <div class="smoove" data-move-z="-500px">
                 <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls autoplay muted loop></video>
             </div>
         </section>
         <section id="about">
             <!-- 區塊標題 -->
-            <div>
+            <div class="smoove" data-move-y="5000px">
                 <header class="title">
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
@@ -398,6 +410,9 @@
     <!-- JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- SMOOVE CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
 
     <!-- carousel.js 獨立檔案連結 -->
     <script src="./js/carousel.js"></script>

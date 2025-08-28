@@ -20,31 +20,43 @@
     <header id="topbar">
         <!-- logo區 -->
         <div class="logo">
-            <!-- figure將多個影像封裝成一個群組 -->
-            <!-- alt屬性用來說明圖片檔案內容(影響seo，可以留空值但不能刪除) -->
-            <img src="./images/logo_f.svg" alt="logo">
+            <a href="./index.html">
+                <!-- figure將多個影像封裝成一個群組 -->
+                <!-- alt屬性用來說明圖片檔案內容(影響seo，可以留空值但不能刪除) -->
+                <img src="./images/logo_f.svg" alt="logo">
+            </a>
         </div>
-        <!-- 導覽列 -->
-        <nav class="navigation">
-            <!-- ul=無序清單 ol=有序清單 兩者元素皆為li-->
-            <!-- icon選單 -->
-            <ul class="icon"><!-- 快速鍵 ul>li*6>a -->
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-            </ul>
 
-            <!-- 主選單 -->
-            <ul class="menu"><!-- 快速鍵<ul>li*6>a -->
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="./index.html#news">NEWS</a></li>
-                <li><a href="./index.html#service">SERVICE</a></li>
-                <li><a href="./index.html#about">ABOUT</a></li>
-                <li><a href="./index.html#video">VIDEO</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
+        <div class="navbar">
+            <!-- 漢堡按鈕 -->
+            <button class="hamburger is-active">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
 
-        </nav>
+            <!-- 導覽列 -->
+            <nav class="navigation">
+                <!-- ul=無序清單 ol=有序清單 兩者元素皆為li-->
+                <!-- icon選單 -->
+                <ul class="icon"><!-- 快速鍵 ul>li*6>a -->
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                </ul>
+
+                <!-- 主選單 -->
+                <ul class="menu"><!-- 快速鍵<ul>li*6>a -->
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+                </ul>
+
+            </nav>
+        </div>
     </header>
 
     <!-- 主要內容區 -->
@@ -143,6 +155,16 @@
         </nav>
         <small>Copyright &copy; 花市 Flower Shop</small>
     </footer>
+
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- carousel.js 獨立檔案連結 -->
+    <script src="./js/carousel.js"></script>
+
+    <!-- 自訂jquery -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
