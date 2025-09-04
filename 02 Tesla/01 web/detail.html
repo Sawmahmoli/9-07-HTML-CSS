@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>(ProductName) - Women - ZARA</title>
+    <!-- jQuery UI CSS CDN -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <!-- 權重高的放在最下面！ -->
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <!-- 頁首區 -->
+    <header class="nav">NAVBAR</header>
+
+    <!-- 主要內容區 -->
+    <main>
+        <section>
+            <header class="title">
+                <h2>ZT系列 軟質 T-Shirt</h2>
+            </header>
+
+            <div class="details-box">
+                <!-- 頁籤相簿 jQuery UI tabs -->
+                <div id="album">
+                    <!-- 頁籤內容 -->
+                    <div id="tabs-1">
+                        <!-- <img src="./images/details/detail-1.jpg" alt="" srcset=""> -->
+                    </div>
+                    <div id="tabs-2">
+                        <!-- <img src="./images/details/detail-2.jpg" alt="" srcset=""> -->
+                    </div>
+                    <div id="tabs-3">
+                        <!-- <img src="./images/details/detail-3.jpg" alt="" srcset=""> -->
+                    </div>
+
+
+                    <!-- 頁籤按鈕 -->
+                    <ul>
+                        <li><a href="#tabs-1"><img src="./images/details/detail-1.jpg" alt="" srcset=""></a></li>
+                        <li><a href="#tabs-2"><img src="./images/details/detail-2.jpg" alt="" srcset=""></a></li>
+                        <li><a href="#tabs-3"><img src="./images/details/detail-3.jpg" alt="" srcset=""></a></li>
+                        <li><a href="#tabs-3"><img src="./images/details/detail-4.jpg" alt="" srcset=""></a></li>
+                        <li><a href="#tabs-3"><img src="./images/details/detail-5.jpg" alt="" srcset=""></a></li>
+                    </ul>
+
+
+                </div>
+
+                <!-- 詳細規格 -->
+                <div class="detail">
+
+                </div>
+
+                <!-- HTML 編輯器 -->
+                <div class="content">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- 頁尾區 -->
+    <footer>
+
+    </footer>
+
+    <!-- jQuery 原生碼 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <!-- 自訂 JavaScript 放在最後！ => 載入其他套件後執行 -->
+    <script src="./js/swiper.js"></script>
+    <script>
+        // jQuery UI tabs
+        $(function () {
+            $("#album").tabs();
+        });
+    </script>
+</body>
+
+</html>

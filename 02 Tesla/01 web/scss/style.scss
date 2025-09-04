@@ -1,11 +1,6 @@
 @use './reset';
 @use './variables/' as *;
-
-// html,
-// body {
-//     position: relative;
-//     height: 100vh;
-// }
+@use 'function' as *;
 
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -31,7 +26,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;  /* 確保溢出的部分被隱藏 */
+    overflow: hidden;
+    /* 確保溢出的部分被隱藏 */
 
 }
 
@@ -41,7 +37,7 @@ body {
     object-fit: cover;
 }
 
-// 共用區
+// ---------------- 共用區 ----------------
 section {
     width: 80%;
     margin: 0 auto;
@@ -72,12 +68,150 @@ section {
             background-color: $charcoal;
         }
     }
+
 }
 
 .list-box {
     display: grid;
     gap: 30px;
     grid-template-columns: 1fr 1fr 1fr;
+
+    .item {
+        a {
+            position: relative;
+
+            h3 {
+                position: absolute;
+                background-color: $alpha-b-60;
+                width: 100%;
+                height: 100%;
+                color: $white;
+                font-size: $f-s-xl;
+                @extend %flex-center;
+                opacity: 0;
+                transition: $speed-fast;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
 }
 
+// -------------- 主要內容區 --------------
+
 // 最新商品
+#new {
+    .mask {
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+    }
+
+    .mask1 {
+        mask-image: url(../images/blobs-1.svg);
+    }
+
+    .mask2 {
+        mask-image: url(../images/blobs-2.svg);
+    }
+
+    .mask3 {
+        mask-image: url(../images/blobs-3.svg);
+    }
+
+}
+
+// 熱門商品
+#hot {
+    .clip {
+        clip-path: inset(5% 5% 5% 5%);
+    }
+}
+
+// 線上商店
+#shop {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 320px);
+        gap: 30px;
+
+        >a {
+            background-size: cover;
+            display: flex;
+            padding: 50px;
+            font-size: $f-s-lg;
+            font-weight: $f-w-m;
+        }
+
+        .s1 {
+            background-image: url(../images/shop_1.png);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .s2 {
+            background-image: url(../images/shop_2.png);
+            justify-content: center;
+            align-items: center;
+            color: $white;
+        }
+
+        .s3 {
+            background-image: url(../images/shop_3.png);
+            grid-column: 1 / 2;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+
+        .s4 {
+            background-image: url(../images/shop_4.png);
+            // grid-row: 3 / span2;
+            grid-row: 3 / 5;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .s5 {
+            background-image: url(../images/shop_5.png);
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .s6 {
+            background-image: url(../images/shop_6.png);
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+}
+
+// detail.HTML
+.detail-box {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 4fr 3fr;
+
+}
+
+// jQuery UI tabs
+.ui-tabs .ui-tabs-nav{
+    display: flex;
+
+}
+
+
+// ---------------- 頁尾區 ----------------
+footer {
+    line-height: 50px;
+    text-align: center;
+    background-color: $charcoal;
+    color: $white;
+    margin-top: $spacing-xl;
+}
