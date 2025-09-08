@@ -44,29 +44,31 @@ section {
 }
 
 .title {
+    display: flex;
+    align-items: center;
     margin: 30px 0 30px;
 
     h2 {
-        position: relative;
-        display: flex;
-        align-items: center;
+        // position: relative;
         font-size: $f-s-xl;
         border-left: 5px solid $charcoal;
         padding-left: $spacing-sm;
+        white-space: nowrap;
 
         span {
             font-size: $f-s-sm;
-            padding-left: $spacing-sm;
+            padding-left: $spacing-xs;
         }
 
-        &::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            width: calc(100% - 12rem);
-            height: 2px;
-            background-color: $charcoal;
-        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $charcoal;
+        margin-left: $spacing-xs;
     }
 
 }
@@ -201,10 +203,59 @@ section {
 }
 
 // jQuery UI tabs
-.ui-tabs .ui-tabs-nav{
-    display: flex;
+// 自訂相簿樣式
 
+// 外層容器
+.ui-widget.ui-widget-content{
+    max-width: 400px;
 }
+
+// ul
+.ui-tabs .ui-tabs-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ui-widget-header {
+    background: transparent;
+    border: none;
+}
+
+// li
+.ui-tabs .ui-tabs-nav li {
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+
+// 修改作用中的樣式
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    background: $white;
+    border: 1px solid $charcoal;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 0;
+}
+
+// a => 取消內距
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor { 
+    padding: 0;
+    height: 80px;
+
+    img{
+        // aspect-ratio: 2/1;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+
+
 
 
 // ---------------- 頁尾區 ----------------

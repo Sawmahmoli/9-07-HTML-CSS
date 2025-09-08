@@ -168,27 +168,27 @@ section {
 }
 
 .title {
+  display: flex;
+  align-items: center;
   margin: 30px 0 30px;
 }
 .title h2 {
-  position: relative;
-  display: flex;
-  align-items: center;
   font-size: 1.5rem;
   border-left: 5px solid #171414;
   padding-left: 15px;
+  white-space: nowrap;
 }
 .title h2 span {
   font-size: 0.85rem;
-  padding-left: 15px;
+  padding-left: 10px;
 }
-.title h2::after {
+.title::after {
   content: "";
-  position: absolute;
-  right: 0;
-  width: calc(100% - 12rem);
+  display: block;
+  width: 100%;
   height: 2px;
   background-color: #171414;
+  margin-left: 10px;
 }
 
 .list-box {
@@ -285,8 +285,46 @@ section {
   grid-template-columns: 4fr 3fr;
 }
 
+.ui-widget.ui-widget-content {
+  max-width: 400px;
+}
+
 .ui-tabs .ui-tabs-nav {
   display: flex;
+  justify-content: space-between;
+}
+
+.ui-widget-header {
+  background: transparent;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  background: #fff;
+  border: 1px solid #171414;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding: 0;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  padding: 0;
+  height: 80px;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor img {
+  object-fit: cover;
+  height: 100%;
 }
 
 footer {
