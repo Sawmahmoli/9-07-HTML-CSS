@@ -194,19 +194,31 @@ section {
 
 }
 
-// detail.HTML
-.detail-box {
+// details.HTML
+.details-box {
     display: grid;
     gap: 30px;
     grid-template-columns: 4fr 3fr;
+    grid-template-rows: 1fr 1fr;
 
+    .color1 {
+        background-color: #777771;
+    }
+
+    .color2 {
+        background-color: #fcf6e3;
+    }
+
+    .color3 {
+        background-color: #9d6b50;
+    }
 }
 
 // jQuery UI tabs
 // 自訂相簿樣式
 
 // 外層容器
-.ui-widget.ui-widget-content{
+.ui-widget.ui-widget-content {
     max-width: 400px;
 }
 
@@ -243,11 +255,11 @@ a.ui-button:active,
 }
 
 // a => 取消內距
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor { 
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
     padding: 0;
     height: 80px;
 
-    img{
+    img {
         // aspect-ratio: 2/1;
         object-fit: cover;
         height: 100%;

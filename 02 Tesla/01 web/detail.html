@@ -11,6 +11,9 @@
     <!-- lightbox CSS -->
     <link rel="stylesheet" href="./css/lightbox.min.css">
 
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- 權重高的放在最下面！ -->
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
@@ -26,7 +29,7 @@
                 <h2>ZT系列 軟質 T-Shirt</h2>
             </header>
 
-            <div class="details-box">
+            <div class="details-box w4/5 m-auto">
                 <!-- 頁籤相簿 jQuery UI tabs -->
                 <div id="album">
                     <!-- 頁籤內容 -->
@@ -42,17 +45,17 @@
                     </div>
                     <div id="tabs-3">
                         <a href="./images/details/detail-3.jpg" title="點擊後的放大圖片" data-lightbox="upper">
-                        <img src="./images/details/detail-3.jpg" alt="" srcset="">
+                            <img src="./images/details/detail-3.jpg" alt="" srcset="">
                         </a>
                     </div>
                     <div id="tabs-4">
                         <a href="./images/details/detail-4.jpg" title="點擊後的放大圖片" data-lightbox="upper">
-                        <img src="./images/details/detail-4.jpg" alt="" srcset="">
+                            <img src="./images/details/detail-4.jpg" alt="" srcset="">
                         </a>
                     </div>
                     <div id="tabs-5">
                         <a href="./images/details/detail-5.jpg" title="點擊後的放大圖片" data-lightbox="upper">
-                        <img src="./images/details/detail-5.jpg" alt="" srcset="">
+                            <img src="./images/details/detail-5.jpg" alt="" srcset="">
                         </a>
                     </div>
 
@@ -71,7 +74,43 @@
 
                 <!-- 詳細規格 -->
                 <div class="detail">
+                    <h1 class="text-3xl font-semibold"><data value="3039-468-809">軟質 T 恤</data></h1>
 
+                    <div class="price">
+                        <del class="mr-2">NT$ 990</del>
+                        <mark class="text-xl font-medium bg-green-200">&nbsp;-50%&nbsp;NT$ 495</mark>
+                    </div>
+
+                    <h3 class="text-sm font-bold mt-4 mb-3">顏色:</h3>
+                    <div class="color-box">
+                        <button type="button" class="color2 w-7 h-7"></button>
+                        <button type="button" class="color1 w-7 h-7"></button>
+                        <button type="button" class="color3 w-7 h-7"></button>
+                    </div>
+
+                    <h3 class="text-sm font-bold mt-4 mb-3">選擇尺寸:</h3>
+                    <div class="size-box">
+                        <button type="button" class="w-7 h-7 border-2 border-solid hover:bg-green-200 hover:border-green-200">S</button>
+                        <button type="button" class="w-7 h-7 border-2 border-solid hover:bg-green-200 hover:border-green-200">M</button>
+                        <button type="button" class="w-7 h-7 border-2 border-solid hover:bg-green-200 hover:border-green-200">L</button>
+                        <button type="button" class="w-7 h-7 border-2 border-solid hover:bg-green-200 hover:border-green-200">XL</button>
+                    </div>
+
+                    <details>
+                        <summary class="text-sm font-bold mt-4 mb-3">材質</summary>
+                        <pre>
+45% 亞克力纖維
+33% 聚酯纖維
+22% 聚醯胺纖維
+                        </pre>
+                    </details>
+
+
+
+                    <p class="text-sm">
+                        圓領上衣；落肩袖。<br>
+                        模特兒身高：174 cm | 尺碼：XS
+                    </p>
                 </div>
 
                 <!-- HTML 編輯器 -->
@@ -87,7 +126,7 @@
 
     <!-- 頁尾區 -->
     <footer>
-
+        copyright &copy; 2025 TESLA.
     </footer>
 
     <!-- jQuery 原生碼 -->
@@ -98,12 +137,20 @@
     <script src="./js/lightbox.min.js"></script>
 
     <!-- 自訂 JavaScript 放在最後！ => 載入其他套件後執行 -->
-    <script src="./js/swiper.js"></script>
+    <!-- <script src="./js/swiper.js"></script> -->
+
+    <!-- jQuery 共用 script 標籤 -->
     <script>
         // jQuery UI tabs
         $(function () {
             $("#album").tabs();
         });
+
+        // lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
     </script>
 </body>
 

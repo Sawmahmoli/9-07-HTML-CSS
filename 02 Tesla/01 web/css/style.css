@@ -279,10 +279,20 @@ section {
   align-items: center;
 }
 
-.detail-box {
+.details-box {
   display: grid;
   gap: 30px;
   grid-template-columns: 4fr 3fr;
+  grid-template-rows: 1fr 1fr;
+}
+.details-box .color1 {
+  background-color: #777771;
+}
+.details-box .color2 {
+  background-color: #fcf6e3;
+}
+.details-box .color3 {
+  background-color: #9d6b50;
 }
 
 .ui-widget.ui-widget-content {
