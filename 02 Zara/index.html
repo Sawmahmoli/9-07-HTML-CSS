@@ -102,7 +102,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <!-- 主選單 -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-black text-white">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-dark text-white">
 
                     <!-- .active 當前頁面樣式 -->
                     <li class="nav-item">
@@ -173,13 +173,181 @@
         </div>
     </nav>
 
-    <main>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem ab tenetur eaque, illo eveniet eius! Vitae optio consectetur, mollitia cupiditate in, dicta quasi, quae asperiores nobis officia provident. Sed similique sunt tenetur voluptas explicabo optio dicta numquam ut consequuntur temporibus praesentium cumque excepturi nostrum quos fugiat quod provident quia, corrupti eligendi tempore. Nostrum eveniet nulla aut expedita porro dicta tenetur incidunt beatae optio quae! Dolor exercitationem harum distinctio a tempore culpa soluta quis! Enim sint tempora, consequatur quam ab sed id nobis illum quasi dicta nihil corrupti iure ipsa ad quae vitae obcaecati suscipit voluptate, corporis error eius, amet quos similique. Ut officiis deleniti veniam, reiciendis quam, ipsam minus provident totam perferendis optio aperiam possimus, rerum facilis molestiae pariatur? Architecto praesentium placeat ex necessitatibus quas similique saepe! Quisquam aliquam molestias, nostrum assumenda odit in quasi iusto odio numquam nisi eligendi beatae et vero obcaecati quia itaque laborum ex totam. Adipisci eligendi odit velit quo sequi, cupiditate sed quas, eum eos quis quibusdam distinctio fugit repellendus. Dolor et velit animi quasi, sed pariatur, ad doloribus dicta quisquam soluta laboriosam quis rem quaerat ipsam molestiae, nostrum cum. Vitae quas voluptatibus, deserunt aliquid optio rerum dicta laborum non sed animi eaque molestias facere!</main>
+    <main>
+        <section id="all" class="container">
+            <header class="title">
+                <h2>全部商品</h2>
+            </header>
+            <div class="list-box row">
+
+                <!-- (群組) [屬性] {內容} 兄弟元素使用+ 使用縮寫時不能換行-->
+                <!-- div*16.col-my-5.col-lg-3.col-sm-4.col-6>
+                    (a.d-block[href="#"]>
+                        img.hover-image[src="./images/product/default-img$.jpg" alt="產品名稱$" 
+                            data-hover="./images/product/hover-img$.jpg"])+
+                    div.content>h4{產品名稱$}+p{NT.999} -->
+
+                <!-- 單張卡片 -->
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img1.jpg" alt="產品名稱1"
+                            class="hover-image" data-hover="./images/product/hover-img1.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱1</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img2.jpg" alt="產品名稱2"
+                            class="hover-image" data-hover="./images/product/hover-img2.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱2</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img3.jpg" alt="產品名稱3"
+                            class="hover-image" data-hover="./images/product/hover-img3.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱3</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img4.jpg" alt="產品名稱4"
+                            class="hover-image" data-hover="./images/product/hover-img4.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱4</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img5.jpg" alt="產品名稱5"
+                            class="hover-image" data-hover="./images/product/hover-img5.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱5</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img6.jpg" alt="產品名稱6"
+                            class="hover-image" data-hover="./images/product/hover-img6.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱6</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img7.jpg" alt="產品名稱7"
+                            class="hover-image" data-hover="./images/product/hover-img7.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱7</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img8.jpg" alt="產品名稱8"
+                            class="hover-image" data-hover="./images/product/hover-img8.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱8</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img9.jpg" alt="產品名稱9"
+                            class="hover-image" data-hover="./images/product/hover-img9.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱9</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img10.jpg" alt="產品名稱10"
+                            class="hover-image" data-hover="./images/product/hover-img10.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱10</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img11.jpg" alt="產品名稱11"
+                            class="hover-image" data-hover="./images/product/hover-img11.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱11</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img12.jpg" alt="產品名稱12"
+                            class="hover-image" data-hover="./images/product/hover-img12.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱12</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img13.jpg" alt="產品名稱13"
+                            class="hover-image" data-hover="./images/product/hover-img13.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱13</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img14.jpg" alt="產品名稱14"
+                            class="hover-image" data-hover="./images/product/hover-img14.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱14</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img15.jpg" alt="產品名稱15"
+                            class="hover-image" data-hover="./images/product/hover-img15.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱15</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+                <div class="col-my-5 col-lg-3 col-sm-4 col-6">
+                    <a href="#" class="d-block"><img src="./images/product/default-img16.jpg" alt="產品名稱16"
+                            class="hover-image" data-hover="./images/product/hover-img16.jpg"></a>
+                    <div class="content">
+                        <h4>產品名稱16</h4>
+                        <p>NT.999</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
     <footer></footer>
 
     <!-- boostrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- 滑鼠變換影像 -->
+    <script>
+        $(function () {
+            $('.hover-image').hover(
+                function () {
+                    // 滑鼠移入時更換圖片
+                    var hoverSrc = $(this).data('hover');
+                    $(this).attr('data-default', $(this).attr('src')); // 儲存原始圖片
+                    $(this).attr('src', hoverSrc);
+                },
+                function () {
+                    // 滑鼠移出時還原圖片
+                    var hoverSrc = $(this).attr('data-default');
+                    $(this).attr('src', hoverSrc);
+                });
+        });
+    </script>
 
 
 </body>
