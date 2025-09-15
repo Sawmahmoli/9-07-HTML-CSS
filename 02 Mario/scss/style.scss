@@ -1,0 +1,46 @@
+@use "reset";
+@use "function" as *;
+@use "variables" as*;
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+
+section {
+    color: $white;
+    height: 100vh;
+    @extend %flex-center;
+    padding: 10%;
+    gap: 30px;
+}
+
+body {
+    font-family: "Catamaran", sans-serif;
+    font-optical-sizing: auto;
+    //   font-weight: <weight>;
+    font-style: normal;
+}
+
+
+#banner {
+    background-image: url(../images/bg-pattern-logos.png), linear-gradient(#e70112, #b20722 75%);
+
+    >div {
+        flex: 1;
+    }
+
+    h1 {
+        font-size: $f-s-ex;
+        font-weight: $f-w-bl;
+        line-height: 0.8;
+        letter-spacing: 2px;
+
+        span {
+            font-size: 11rem;
+            font-weight: $f-w-bl;
+
+        }
+    }
+
+    p {
+        font-size: $f-s-lg;
+        // margin-top: $spacing-xxl;
+    }
+}
