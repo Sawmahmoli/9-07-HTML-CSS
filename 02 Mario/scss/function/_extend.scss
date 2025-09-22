@@ -65,14 +65,15 @@
     }
 }
 
+// 多行省略
 %multiple-line {
-    // 多行省略
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
 
+// 單行省略
 %single-line {
     overflow: hidden;
     text-overflow: ellipsis;

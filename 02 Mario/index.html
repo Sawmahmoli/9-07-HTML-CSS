@@ -28,11 +28,76 @@
             </div>
 
             <!-- 動態圖片 -->
-            <div class="photo"></div>
+            <div class="photo">
+                <div class="banner1">
+                    <figure><img src="./images/banner1-brick-row.png" alt=""></figure>
+                    <figure><img src="./images/banner1-luigi.png" alt=""></figure>
+                    <figure><img src="./images/banner1-mario.png" alt=""></figure>
+                </div>
+                <div class="banner2">
+                    <figure><img src="./images/banner2-pipe.png" alt=""></figure>
+                    <figure><img src="./images/banner2-peach.png" alt=""></figure>
+                    <figure><img src="./images/banner2-mario.png" alt=""></figure>
+                </div>
+                <div class="banner3">
+                    <figure><img src="./images/banner3-star.png" alt=""></figure>
+                    <figure><img src="./images/banner3-toad.png" alt=""></figure>
+                    <figure><img src="./images/banner3-mario.png" alt=""></figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="switch">
+            <div class="list-box">
+                <div class="card-item1">
+                    <figure data-tilt><img src="./images/mario_1.png" alt=""></figure>
+                    <div class="content">
+                        <h2>Mario Kart™ 8 Deluxe</h2>
+                        <p>Race with Mario and friends anytime, anywhere!
+                        </p>
+                    </div>
+                </div>
+                <div class="card-item2">
+                    <figure><img src="./images/mario_2.png" alt=""></figure>
+                    <div class="content">
+                        <h2>Super Mario™ 3D World + Bowser's Fury</h2>
+                        <p>Enjoy 2 Mario adventures in one—a platformer with lively multiplayer + a bonus adventure.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-item3">
+                    <figure><img src="./images/mario_3.png" alt=""></figure>
+                    <div class="content">
+                        <h2>New Super Mario Bros.™ U Deluxe</h2>
+                        <p>Join Mario, Luigi, and pals for single-player or multiplayer fun anytime, anywhere!
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
     <footer></footer>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- 3D 傾斜 vanilla-tilt CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- 3D 傾斜 套件-->
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".card-item1"), {
+            max: 25,
+            speed: 400
+        });VanillaTilt.init(document.querySelector(".card-item2"), {
+            max: 25,
+            speed: 400
+        });VanillaTilt.init(document.querySelector(".card-item3"), {
+            max: 25,
+            speed: 400
+        });
+    </script>
+
 </body>
 
 </html>

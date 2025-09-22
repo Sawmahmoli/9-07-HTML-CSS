@@ -123,7 +123,224 @@ a {
 }
 
 /* reset end */
-section {
+@keyframes brick {
+  0% {
+    top: 5vh;
+    right: -100%;
+  }
+  10% {
+    top: 5%;
+    right: -20%;
+    width: 95%;
+  }
+  20% {
+    top: 5%;
+    right: -20%;
+    width: 95%;
+  }
+  30% {
+    top: 5vh;
+    right: -100%;
+    width: 95%;
+  }
+  100% {
+    top: 5vh;
+    right: -100%;
+    width: 95%;
+  }
+}
+@keyframes luigi {
+  0% {
+    top: 100%;
+    right: 0;
+  }
+  10% {
+    top: 20%;
+    right: 0;
+  }
+  20% {
+    top: 20%;
+    right: 0;
+  }
+  30% {
+    top: 100%;
+    right: 0;
+  }
+  100% {
+    top: 100%;
+    right: 0;
+  }
+}
+@keyframes mario1 {
+  0% {
+    top: 100vh;
+    right: 40%;
+  }
+  10% {
+    top: 10%;
+    right: 40%;
+  }
+  20% {
+    top: 10%;
+    right: 40%;
+  }
+  30% {
+    top: 100vh;
+    right: 40%;
+  }
+  100% {
+    top: 100vh;
+    right: 40%;
+  }
+}
+@keyframes pipe {
+  0% {
+    top: 100vh;
+    right: 0;
+  }
+  10% {
+    top: 5vh;
+    right: 0;
+  }
+  20% {
+    top: 5vh;
+    right: 0;
+  }
+  30% {
+    top: 100vh;
+    right: 0;
+  }
+  100% {
+    top: 100vh;
+    right: 0;
+  }
+}
+@keyframes peach {
+  0% {
+    top: 100vh;
+    right: 5%;
+  }
+  10% {
+    top: 30vh;
+    right: 5%;
+  }
+  20% {
+    top: 30vh;
+    right: 5%;
+  }
+  30% {
+    top: 100vh;
+    right: 5%;
+  }
+  100% {
+    top: 100vh;
+    right: 5%;
+  }
+}
+@keyframes mario2 {
+  0% {
+    top: 100vh;
+    width: 65%;
+    left: -10%;
+  }
+  10% {
+    top: 10vh;
+    width: 65%;
+    left: -10%;
+  }
+  20% {
+    top: 10vh;
+    width: 65%;
+    left: -10%;
+  }
+  30% {
+    top: 100vh;
+    width: 65%;
+    left: -10%;
+  }
+  100% {
+    top: 100vh;
+    width: 65%;
+    left: -10%;
+  }
+}
+@keyframes star {
+  0% {
+    top: 100vh;
+    right: 10%;
+    width: 50%;
+  }
+  10% {
+    top: 5vh;
+    right: 10%;
+    width: 50%;
+  }
+  20% {
+    top: 5vh;
+    right: 10%;
+    width: 50%;
+  }
+  30% {
+    top: 100vh;
+    right: 10%;
+    width: 50%;
+  }
+  100% {
+    top: 100vh;
+    right: 10%;
+    width: 50%;
+  }
+}
+@keyframes toad {
+  0% {
+    top: 100vh;
+    right: 20%;
+    width: 40%;
+  }
+  10% {
+    top: 30vh;
+    right: 20%;
+    width: 40%;
+  }
+  20% {
+    top: 30vh;
+    right: 20%;
+    width: 40%;
+  }
+  30% {
+    top: 100vh;
+    right: 20%;
+    width: 40%;
+  }
+  100% {
+    top: 100vh;
+    right: 20%;
+    width: 40%;
+  }
+}
+@keyframes mario3 {
+  0% {
+    top: 100vh;
+    left: -15%;
+  }
+  10% {
+    top: 20vh;
+    left: -15%;
+  }
+  20% {
+    top: 20vh;
+    left: -15%;
+  }
+  30% {
+    top: 100vh;
+    left: -15%;
+  }
+  100% {
+    top: 100vh;
+    left: -15%;
+  }
+}
+section, #switch .list-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +349,6 @@ section {
 section {
   color: #fff;
   height: 100vh;
-  padding: 10%;
   gap: 30px;
 }
 
@@ -144,20 +360,100 @@ body {
 
 #banner {
   background-image: url(../images/bg-pattern-logos.png), linear-gradient(#e70112, #b20722 75%);
+  padding-left: 10%;
 }
 #banner > div {
   flex: 1;
 }
-#banner h1 {
-  font-size: 4rem;
+#banner .content h1 {
+  font-size: 2rem;
   font-weight: 900;
   line-height: 0.8;
   letter-spacing: 2px;
 }
-#banner h1 span {
-  font-size: 11rem;
+#banner .content h1 span {
+  font-size: 10rem;
   font-weight: 900;
 }
-#banner p {
+#banner .content p {
   font-size: 1.2rem;
+  margin-top: 25px;
+}
+#banner .photo {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+#banner .photo figure {
+  position: absolute;
+}
+#banner .photo .banner1 figure:nth-child(1) {
+  width: 95%;
+  animation: brick 12s 0.5s both infinite;
+}
+#banner .photo .banner1 figure:nth-child(2) {
+  width: 50%;
+  animation: luigi 12s 0.35s both infinite;
+}
+#banner .photo .banner1 figure:nth-child(3) {
+  animation: mario1 12s 0s both infinite;
+}
+#banner .photo .banner2 figure:nth-child(1) {
+  width: 70%;
+  animation: pipe 12s 4.5s both infinite;
+}
+#banner .photo .banner2 figure:nth-child(2) {
+  width: 50%;
+  animation: peach 12s 4.35s both infinite;
+}
+#banner .photo .banner2 figure:nth-child(3) {
+  top: 10vh;
+  width: 65%;
+  left: -10%;
+  animation: mario2 12s 4s both infinite;
+}
+#banner .photo .banner3 figure:nth-child(1) {
+  width: 50%;
+  animation: star 12s 8.5s both infinite;
+}
+#banner .photo .banner3 figure:nth-child(2) {
+  width: 40%;
+  animation: toad 12s 8.35s both infinite;
+}
+#banner .photo .banner3 figure:nth-child(3) {
+  width: 80%;
+  animation: mario3 12s 8s both infinite;
+}
+
+#switch .list-box {
+  width: 80%;
+  gap: 30px;
+}
+#switch .list-box > div {
+  flex: 1;
+  background-color: #2d2c2b;
+  border-radius: 20px;
+}
+#switch .list-box figure {
+  position: relative;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+#switch .list-box img {
+  position: absolute;
+  width: 90%;
+  top: -15vh;
+  transform: translateZ(50px);
+}
+#switch .list-box .content {
+  padding: 30px;
+  height: 8.75rem;
+}
+#switch .list-box .content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
 }

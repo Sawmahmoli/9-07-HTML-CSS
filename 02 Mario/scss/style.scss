@@ -7,7 +7,6 @@ section {
     color: $white;
     height: 100vh;
     @extend %flex-center;
-    padding: 10%;
     gap: 30px;
 }
 
@@ -21,26 +20,156 @@ body {
 
 #banner {
     background-image: url(../images/bg-pattern-logos.png), linear-gradient(#e70112, #b20722 75%);
+    padding-left: 10%;
 
     >div {
         flex: 1;
     }
 
-    h1 {
-        font-size: $f-s-ex;
-        font-weight: $f-w-bl;
-        line-height: 0.8;
-        letter-spacing: 2px;
-
-        span {
-            font-size: 11rem;
+    .content {
+        h1 {
+            font-size: $f-s-xxl;
             font-weight: $f-w-bl;
+            line-height: 0.8;
+            letter-spacing: 2px;
 
+            span {
+                font-size: $f-s-dislay;
+                font-weight: $f-w-bl;
+
+            }
+        }
+
+        p {
+            font-size: $f-s-lg;
+            margin-top: $spacing-lg;
         }
     }
 
-    p {
-        font-size: $f-s-lg;
-        // margin-top: $spacing-xxl;
+    .photo {
+        overflow: hidden;
+
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        figure {
+            position: absolute;
+        }
+
+        .banner1 {
+            figure {
+
+                &:nth-child(1) {
+                    // brick
+                    width: 95%;
+                    animation: brick 12s 0.5s both infinite;
+
+                }
+
+                &:nth-child(2) {
+                    // luigi
+                    width: 50%;
+                    animation: luigi 12s 0.35s both infinite;
+                }
+
+                &:nth-child(3) {
+                    // mario
+                    animation: mario1 12s 0s both infinite;
+                }
+            }
+        }
+
+        // 每新增一組banner => delay+4s
+        .banner2 {
+            figure {
+
+                &:nth-child(1) {
+                    // pipe
+                    width: 70%;
+                    animation: pipe 12s 4.5s both infinite;
+                }
+
+                &:nth-child(2) {
+                    // peach
+                    width: 50%;
+                    animation: peach 12s 4.35s both infinite;
+                }
+
+                &:nth-child(3) {
+                    // mario
+                    top: 10vh;
+                    width: 65%;
+                    left: -10%;
+                    animation: mario2 12s 4s both infinite;
+                }
+            }
+        }
+
+        // 每新增一組banner => delay+4s
+        .banner3 {
+            figure {
+
+                &:nth-child(1) {
+                    // star
+                    width: 50%;
+                    animation: star 12s 8.5s both infinite;
+                }
+
+                &:nth-child(2) {
+                    // toad
+                    width: 40%;
+                    animation: toad 12s 8.35s both infinite;
+                }
+
+                &:nth-child(3) {
+                    // mario
+                    width: 80%;
+                    animation: mario3 12s 8s both infinite;
+                }
+            }
+        }
     }
+}
+
+#switch {
+    .list-box {
+        width: 80%;
+        @extend %flex-center;
+        gap: 30px;
+
+        >div {
+            flex: 1;
+            background-color: $deep-gray;
+            border-radius: 20px;
+        }
+
+        figure {
+            position: relative;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+
+        }
+
+        img {
+            position: absolute;
+            width: 90%;
+            top: -15vh;
+            transform: translateZ(50px); // 子元素浮起
+        }
+
+        .content {
+            padding: 30px;
+            height: 8.75rem;
+
+            h2 {
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+        }
+    }
+
 }
